@@ -10,8 +10,9 @@ class HomePage(BasePage):
     logout = (By.XPATH, "//li[@data-test-id='staff-menu-logout']")
     name = ReadConfig.getIssueSubject()
     issueName = (By.XPATH, "//a[text()='" + name + "']")
-    status = (By.XPATH, "//li[@data-test-id='module-switcher_manage-statuses']")
-    priority = (By.XPATH, "//li[@data-test-id='module-switcher_manage-priorities']")
+    # status = (By.XPATH, "//li[@data-test-id='module-switcher_manage-statuses']")
+    status = (By.XPATH, "//a[text()='Statuses']")
+    priority = (By.XPATH, "//a[text()='Priorities']")
 
     def __init__(self, driver):
         super().__init__(driver)

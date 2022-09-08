@@ -10,10 +10,10 @@ from utilities.readProperties import ReadConfig
 class StatusPage(BasePage):
     statusCreate = (By.CLASS_NAME, 'hf-mod-create')
     statusCreateName = (By.XPATH, "//input[@data-test-id='form-field-name']")
-    statusCreateDescription = (By.XPATH, "//input[@data-test-id='form-field-description']")
+    statusCreateDescription = (By.XPATH, "//textarea[@data-test-id='form-field-description']")
     statusBehaviourDropDown = (By.CLASS_NAME, "ember-basic-dropdown")
     statusBehaviourInput = (By.XPATH, "//input[@type='search']")
-    statusSubmit = (By.XPATH, "//input[@data-test-id='add-status']")
+    statusSubmit = (By.XPATH, "//button[@data-test-id='add-status']")
     statusName = ReadConfig.getStatusName()
     statusDescription = ReadConfig.getStatusDescription()
     statusBehaviour = ReadConfig.getStatusBehaviour()
@@ -26,7 +26,7 @@ class StatusPage(BasePage):
     statusDeleteConfirmationDropDown = (By.XPATH, "//span[text()='Choose Status']")
     statusDeleteConfirmationInputBox = (By.XPATH, "//input[@type='search']")
     statusDeleteConfirmationButton = (By.XPATH, "//button[text()='Delete']")
-    statusDeleteConfirmation = (By.XPATH, "//div[text()='Status '" + statusName + "' is deleted successfully.']")
+    statusDeleteConfirmation = (By.XPATH, """//div[text()='Status "' + statusName + '" is deleted successfully.']""")
     statusDeleteConfirmationReplace = ReadConfig.getStatusReplace()
 
     def __init__(self, driver):

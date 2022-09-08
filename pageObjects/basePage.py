@@ -25,7 +25,7 @@ class BasePage:
             return False
 
     def click_from_menu(self, locator):
-        self.click((By.CLASS_NAME, 'hf-top-bar-title'))
+        self.click((By.CLASS_NAME, 'hf-top-bar_title'))
         self.click(locator)
 
     def verify_element_presence(self, locator, duration=10):
